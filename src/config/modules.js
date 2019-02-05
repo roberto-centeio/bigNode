@@ -1,0 +1,16 @@
+module.exports={ 
+    "modules":[
+        {
+            "route":"/venda",
+            "models":"models",
+            "run":"index",
+            "path":"apps_modules/vendas",
+        },
+        {
+            "route":"/funcionario",
+            "models":"models",
+            "run":"index",
+            "path":"apps_modules/funcionario",
+        }
+    ]
+}
