@@ -1,7 +1,7 @@
 {
-  "name": "store-backend",
+  "name": "bigNode",
   "version": "1.0.0",
-  "description": "Store Backend",
+  "description": "Big Node",
   "main": "index.js",
   "directories": {
     "lib": "lib"
