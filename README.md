@@ -2,7 +2,7 @@
 # bigNode
 This is the Framework node.js and aims to be framework for large modular project building.
 
->Em Fase de desenvolvimento!
+>In Development Phase!
 
 >It aims to make the development of large projects simple, fast, secure and very flexible, thus warning of reducing the complexity and constraint found in the development of projects that tend to increase with the growth of functionalities, and also have several modules included in them.
 
