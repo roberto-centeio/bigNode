@@ -70,7 +70,6 @@ module.exports={
                         break;
                     case "GET":
                         let id = urls[3];
-                        console.log(id,"llll",_.isNil(id))
                         if(!_.isNil(id)){
                             get.get(modelsStr,attr,id).then(resolve=>{
                                 res.send(JSON.stringify(resolve))

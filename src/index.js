@@ -6,7 +6,6 @@ const generateModels = require("./lib/models/index")
 
 var morgan = require('morgan')
  
-
 function loadModules(myServer){
     modules.forEach(element => {
         
@@ -14,10 +13,11 @@ function loadModules(myServer){
         let myModule = require("./"+element.path+"/"+element.run);
         let models = require("./"+element.path+"/"+element.models);
 
-        console.log(element.route,'models')
+        modelsObj = generateModels.generateModels(models)
+        
         myServer.use(element.route,router)
         db.init(router,models)
-        myModule.init(router)
+        myModule.init(router,modelsObj)
 
     });
 }
@@ -27,8 +27,9 @@ initServer().then((myServer)=>{
     global.server = myServer;
     require("./lib/Routers/errors")
     myServer.use(morgan(':method :url :response-time mss'))
-}).catch(()=>{
-
+}).catch((error)=>{
+    console.log(error);
+    
 })
 
 

@@ -37,13 +37,13 @@ function generateModels(modelObj){
         }
     
         mod[element].save=function(){
-            let query = query.prepareQueryInsert(this.attrs)
-            let sql = "insert into "+m+" "+query.into+" values "+query.values;
+            let myquery = query.prepareQueryInsert(this.attrs)
+            let sql = "insert into "+element+" "+myquery.into+" values "+myquery.values;
             return new Promise( (resolve,reject)=>{
                 setTimeout(()=>{
                     pool.getConnection((err, db) => {
                         if (err) reject(err);
-                        db.execute(sql,query.params, (err, rows, fields) => {
+                        db.execute(sql,myquery.params, (err, rows, fields) => {
                             if (err) reject(err);
                             resolve(rows);
                             // get(model,attr,rows.insertId).then(rowGet=>{
