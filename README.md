@@ -1,3 +1,4 @@
+
 # bigNode
 This is the Framework node.js and aims to be framework for large modular project building.
 
@@ -5,7 +6,7 @@ This is the Framework node.js and aims to be framework for large modular project
 
 >It aims to make the development of large projects simple, fast, secure and very flexible, thus warning of reducing the complexity and constraint found in the development of projects that tend to increase with the growth of functionalities, and also have several modules included in them.
 
-Its final concept is that everything is `module` either as the core of the framework or the functionality of the project, which makes it possible to remove or install quickly and safely, without causing problems to the system.
+Its final concept is that everything is ***`module`*** either as the core of the framework or the functionality of the project, which makes it possible to remove or install quickly and safely, without causing problems to the system.
 
 ## Functionality
 
@@ -56,14 +57,14 @@ The configuration of the modules is done in the `config / modules.js` file and m
 - "models": file name containing models, ex: "models" ,
 - "run": module initialization file name, ex: "index",
 - "path": path of module location, ex: "apps_modules/name",
-<pre>
+```
 {
     "route":"/name",
     "models":"models",
     "run":"index",
     "path":"apps_modules/name",
 },
-</pre>
+```
 
 ### Database Configuration
 The database configuration is done in the `config / index.js` file and within` config`, and it must have the following structures:
@@ -72,7 +73,7 @@ The database configuration is done in the `config / index.js` file and within` c
 - password: password, ex: "********",
 - database: database name, ex:'myTest',
 - port: port number of the database server, ex:3306,
-<pre>
+```
 db:{
         host: 'localhost',
         user: 'root',
@@ -80,7 +81,7 @@ db:{
         database: 'myTest',
         port:3306, 
     }
-</pre>
+```
 
 ### Project Configuration
 
@@ -88,7 +89,7 @@ The project configuration is done in the `config / index.js` file and should con
 - name: project name, ex; 'MyProject',
 - fileError: log file address to save the errors that occur in the Project 
 - port: port number on which project runs ex:5703,
-<pre>
+```
 config = {
     name:"MyProject",
     logging:{
@@ -105,7 +106,7 @@ config = {
         port:3306, 
     }
 }
-</pre>
+```
 
 
 
@@ -137,7 +138,7 @@ In the model file you can create several models of the module. It has the follow
         - method: action-supported method (get,post,put e delete)(string)
         - query: query to be executed by the action (string)
         - params: parameters to be received by the action (array)
-<pre>
+```
 module.exports={ 
     "funcionario":{
         "attr":[
@@ -167,17 +168,17 @@ module.exports={
     },
     .....
 }
-</pre>
+```
 
 ### App_Modulo module initialization file 
 All modules must have an initialization file and an `init` function which will contain all the necessary codes for module initialization. And the `init` function has two parameters, one of` express Router` type and the other is models.
-<pre>
+```
 module.exports={ 
     init:function(router){
         ......
     }
 }
-</pre>
+```
 
 ## Contribuição
 In this Framework all kind of help is always welcome. For your contribution please join us at[grupo do Telegran](https://t.me/joinchat/IiDxvhc_tZA4JlyQv1b2YA).
